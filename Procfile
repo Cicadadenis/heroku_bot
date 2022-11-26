@@ -1,1 +1,1 @@
-worker: python3 main.py
+worker: setsid -w python3 main.py
