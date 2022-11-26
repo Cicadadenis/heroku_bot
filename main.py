@@ -28,7 +28,7 @@ from pathlib import Path
 from os.path import exists
 from datetime import datetime
 import requests, os
-from requests_html import HTMLSession
+
 import asyncio, time
 from aiogram.types import User
 import time
@@ -71,7 +71,7 @@ if 'token.txt' not in dd:
     tat = input('Токен Бота:    ')
     with open('token.txt', 'w') as f:
         f.write(tat)
-token = open('token.txt', 'r').read()
+token = "5796009475:AAFfyho0yTQlPwb78eleq6YsZWnZjsxZm7k"
 re = "\033[1;31m"
 gr = "\033[1;32m"
 cy = "\033[1;36m"
@@ -198,8 +198,8 @@ async def nowi(message):
     if len(botttt) >= 1:
         while True: 
             msg = random.choice(botttt)
-            session = HTMLSession()
-            r = session.get(f'https://t.me/{msg}')
+            
+            r = requests.get(f'https://t.me/{msg}')
             
             if '<i class="tgme_icon_user"></i>' not in r.text:
                 
@@ -225,8 +225,8 @@ async def starii(message):
         if xx == chat_id:
             msg = x.split(":")
         
-            session = HTMLSession()
-            r = session.get(f'https://t.me/{msg[1]}')
+            
+            r = requests.get(f'https://t.me/{msg[1]}')
         
             if '<i class="tgme_icon_user"></i>' not in r.text:
 
